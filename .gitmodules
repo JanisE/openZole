@@ -1,0 +1,3 @@
+[submodule "external/cards.js"]
+	path = external/cards.js
+	url = https://github.com/JanisE/cards.js.git
