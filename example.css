@@ -1,0 +1,102 @@
+html { 
+	background-color:#092E20; 
+}
+
+body { 
+	font-family: arial, sans-serif;
+}
+
+a img {
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	border: 0;			
+}
+
+button {
+	height:30px;
+	width:100px;
+	margin:8px auto;
+}
+
+img.preload {
+	display:none;
+}
+
+h1 {
+	font-size:60px;
+	text-align:center;
+	padding:0px;
+	margin:10px auto;
+}
+
+.game_box {
+	position: relative;
+	margin: 20px auto;
+	border:solid 1px black;
+	border-radius:8px;
+	box-shadow:black 0px 0px 2px;
+	background: #ffffff;
+	padding: 30px 50px;
+	width: 612px;	/* card table's 600 width + 2x6px borders. */
+}
+
+.project_info {
+	margin: 20px auto;
+	width: 612px;	/* To match .game_box. */
+	color: #ffffff;
+}
+
+.project_info a {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+#buttons {
+	text-align:center;
+}
+
+#card-table {
+	clear: left;
+	background-color:green;
+	height:400px;
+	width:600px;
+	border:solid 6px brown;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	box-shadow:#111 1px 1px 2px;
+}
+
+#deal {
+	position: absolute;
+	left:310px;
+	top:170px;
+}
+
+.player_1, .player_2 {
+	float: left;
+	margin-bottom: 10px;
+	width: 50%;
+	text-align: center;
+}
+
+.player_0 {
+	margin-top: 10px;
+	text-align: center;
+}
+
+table.chips {
+	margin-top: 12px;
+	border-collapse: collapse;
+}
+
+table.chips th, table.chips td {
+	padding: 1px 4px;
+}
+
+table.chips td {
+	border: 1px solid #999999;
+}
