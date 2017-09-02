@@ -181,6 +181,8 @@ function CalculateChips (oGameState)
 		const iLielaisTricks = oStats[sLielais].tricks;
 		let iLielaisChips = 0;
 
+		// Note: "lielais" might have the max points but not all the tricks (not having a {🃇, 🃈, 🃉} trick, for example).
+		// 	That would not be a case of the max chips (of "bezstiķis").
 		if (iLielaisTricks >= 8) {
 			iLielaisChips = 6;
 		}
