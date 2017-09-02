@@ -193,6 +193,7 @@ function CalculateChips (oGameState)
 		else if (iLielaisPoints > 30) {
 			iLielaisChips = -4;
 		}
+		// Cannot use the points: if no tricks taken, the points of the initially discarded cards do not save the day.
 		else if (iLielaisTricks > 0) {
 			iLielaisChips = -6;
 		}
