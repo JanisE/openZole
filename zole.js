@@ -178,9 +178,12 @@ function CalculateChips (oGameState)
 	case 'zole':
 		const sLielais = oGameState.sGameModeBy;
 		const iLielaisPoints = oStats[sLielais].points;
+		const iLielaisTricks = oStats[sLielais].tricks;
 		let iLielaisChips = 0;
 
-		if (iLielaisPoints >= 120) {
+		// Note: "lielais" might have the max points but not all the tricks (not having a {🃇, 🃈, 🃉} trick, for example).
+		// 	That would not be a case of the max chips (of "bezstiķis").
+		if (iLielaisTricks >= 8) {
 			iLielaisChips = 6;
 		}
 		else if (iLielaisPoints > 90) {
@@ -192,7 +195,8 @@ function CalculateChips (oGameState)
 		else if (iLielaisPoints > 30) {
 			iLielaisChips = -4;
 		}
-		else if (iLielaisPoints > 0) {
+		// Cannot use the points: if no tricks taken, the points of the initially discarded cards do not save the day.
+		else if (iLielaisTricks > 0) {
 			iLielaisChips = -6;
 		}
 		else {
