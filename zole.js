@@ -178,9 +178,10 @@ function CalculateChips (oGameState)
 	case 'zole':
 		const sLielais = oGameState.sGameModeBy;
 		const iLielaisPoints = oStats[sLielais].points;
+		const iLielaisTricks = oStats[sLielais].tricks;
 		let iLielaisChips = 0;
 
-		if (iLielaisPoints >= 120) {
+		if (iLielaisTricks >= 8) {
 			iLielaisChips = 6;
 		}
 		else if (iLielaisPoints > 90) {
@@ -192,7 +193,7 @@ function CalculateChips (oGameState)
 		else if (iLielaisPoints > 30) {
 			iLielaisChips = -4;
 		}
-		else if (iLielaisPoints > 0) {
+		else if (iLielaisTricks > 0) {
 			iLielaisChips = -6;
 		}
 		else {
