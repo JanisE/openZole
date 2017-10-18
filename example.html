@@ -3,16 +3,21 @@
 	<head>
 		<title>Zolīte</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="example.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.brighttheme.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+
+		<link rel="stylesheet" href="example.css" />
+
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.core.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.animate.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
 		<script src="lib/GenericDataStructureUtilities.js"></script>
 		<script src="lib/Zole.js"></script>
 		<script src="lib/GameState.js"></script>
@@ -44,14 +49,6 @@
 			</table>
 
 			<!--<div id="player_commands">-->
-				<!--<button>Augšā</button>-->
-				<!--<button>Garām</button>-->
-				<!--<button>Zole</button>-->
-				<!--<button>Mazā zole</button>-->
-
-				<!--<button>Galdiņš</button>-->
-				<!--<button>Pule</button>-->
-
 				<!--<button id="buttonSortPlayerAHand">Sakārtot KO savas kārtis</button>-->
 			<!--</div>-->
 		</div>
@@ -70,9 +67,28 @@
 			</p>
 		</div>
 
+		<div id="game_mode_chooser" class="modal fade">
+			<div class="centering_container">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="btn-group btn-group-lg">
+								<button type="button" class="btn btn-primary" data-dismiss="modal" data-action="skip">Garām (Skip)</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal" data-action="augšā">Augšā</button>
+								<button type="button" class="btn btn-secondary" data-dismiss="modal" data-action="zole">Zole</button>
+								<button type="button" class="btn btn-secondary" data-dismiss="modal" data-action="mazā zole">Mazā zole</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- load this at the bottom so the #card-table element exists -->
 		<script src="external/cards.js/cards.js"></script>
 
 		<script src="example_play.js" charset="utf-8"></script>
+
+	<script>$('#game_mode_chooser').modal({show: false, backdrop: 'static', keyboard: false})</script>
 	</body>
 </html>

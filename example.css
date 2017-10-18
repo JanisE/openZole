@@ -1,9 +1,8 @@
-html { 
-	background-color:#092E20; 
-}
-
-body { 
+body {
+	background-color:#092E20;
 	font-family: arial, sans-serif;
+	font-size: 16px;
+	line-height: 2rem;
 }
 
 a img {
@@ -13,10 +12,8 @@ a img {
 	border: 0;			
 }
 
-button {
-	height:30px;
-	width:100px;
-	margin:8px auto;
+p {
+	margin: 0 0 1em;
 }
 
 img.preload {
@@ -32,13 +29,17 @@ h1 {
 
 .game_box {
 	position: relative;
+	/* Define z-index, as it contains absolutely positioned elements (cards)
+	 	that must not overlay later absolute elements (modals). */
+	z-index: 1;
+
 	margin: 20px auto;
 	border:solid 1px black;
 	border-radius:8px;
 	box-shadow:black 0px 0px 2px;
 	background: #ffffff;
 	padding: 30px 50px;
-	width: 612px;	/* card table's 600 width + 2x6px borders. */
+	width: calc(600px + 2*6px + 2*50px + 2*1px);	/* card table's 600 width + 2x6px borders + 2*50px self-padding + 2x1px serlf-border. */
 }
 
 .project_info {
@@ -52,28 +53,13 @@ h1 {
 	color: #ffffff;
 }
 
-#buttons {
-	text-align:center;
-}
-
 #card-table {
-	clear: left;
 	background-color:green;
-	height:400px;
-	width:600px;
+	height:calc(400px + 2*6px);	/* 400px + 2*6px self-border. */
+	width:calc(600px + 2*6px);	/* 600px + 2*6px self-border. */
 	border:solid 6px brown;
 	border-radius:8px;
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
-	-ms-border-radius:8px;
-	-o-border-radius:8px;
 	box-shadow:#111 1px 1px 2px;
-}
-
-#deal {
-	position: absolute;
-	left:310px;
-	top:170px;
 }
 
 .player_1, .player_2 {
@@ -99,4 +85,12 @@ table.chips th, table.chips td {
 
 table.chips td {
 	border: 1px solid #999999;
+}
+
+.centering_container {
+	display: flex;
+}
+
+.modal-dialog {
+	width: auto;
 }
