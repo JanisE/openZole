@@ -18,7 +18,8 @@ $('.start_button_base button').on('click', () =>
 
 	const oPlayerTypes = {
 		UiPlayer: UiPlayer,
-		RandomMovesMaker: RandomMovesMaker
+		RandomMovesMaker: RandomMovesMaker,
+		RandomMovesMakerCardSorter: RandomMovesMakerCardSorter
 	};
 
 	oDealer.SetPlayers([
