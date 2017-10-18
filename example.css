@@ -42,6 +42,28 @@ h1 {
 	width: calc(600px + 2*6px + 2*50px + 2*1px);	/* card table's 600 width + 2x6px borders + 2*50px self-padding + 2x1px serlf-border. */
 }
 
+.table_container {
+	position: relative;
+	clear: left;
+}
+
+.table_container .start_button_base {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	border: solid 0;
+	border-radius: 8px;	/* To match #card-table. */
+	background-color: rgba(150, 150, 150, 0.7);
+}
+
+.table_container button {
+	margin: auto;
+}
+
 .project_info {
 	margin: 20px auto;
 	width: 612px;	/* To match .game_box. */

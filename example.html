@@ -37,11 +37,22 @@
 		<img class="preload" src="external/cards.js/img/cards.png"/>
 
 		<div class="game_box">
-			<div class="player_1"></div>
-			<div class="player_2"></div>
-			<div id="card-table">
+			<div class="player_1"><span class="name">Rob</span></div>
+			<div class="player_2"><span class="name">Petar</span></div>
+			<div class="table_container">
+				<div id="card-table">
+				</div>
+				<div class="start_button_base">
+					<button type="button" class="btn btn-primary btn-lg">Start</button>
+				</div>
 			</div>
-			<div class="player_0"></div>
+			<div class="player_0">
+				<span class="name">Katniss</span>
+				<select name="player_0_type">
+					<option value="UiPlayer" selected="selected">Human</option>
+					<option value="RandomMovesMaker">Robot</option>
+				</select>
+			</div>
 
 			<table class="chips">
 				<thead></thead>

@@ -1,18 +1,26 @@
 
-// Run the example play.
+$('.start_button_base button').on('click', () =>
+{
+	const jqPlayerType = $('select[name="player_0_type"]');
+	jqPlayerType.prop('disabled', true);
 
-const oDealer = new Dealer({
-	name: 'Test game',
-	description: 'Only computers allowed.',
-	start_time: moment().format()
+	$('.start_button_base').fadeOut();
+
+
+	// Run the example play.
+	const oDealer = new Dealer({
+		name: 'Test game',
+		description: 'Only computers allowed.',
+		start_time: moment().format()
+	});
+
+	oDealer.SetUiAdapter(new UiAdapter_CardsJs());
+
+	oDealer.SetPlayers([
+		new this[jqPlayerType.val()]({name: 'Katniss'}),
+		new RandomMovesMaker({name: 'Rob'}),
+		new RandomMovesMaker({name: 'Petar'})
+	]);
+
+	oDealer.StartGameRun(5);
 });
-
-oDealer.SetUiAdapter(new UiAdapter_CardsJs());
-
-oDealer.SetPlayers([
-	new RandomMovesMaker({name: 'Katniss'}),
-	new RandomMovesMaker({name: 'Rob'}),
-	new RandomMovesMaker({name: 'Petar'})
-]);
-
-oDealer.StartGameRun(5);
