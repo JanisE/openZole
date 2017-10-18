@@ -16,8 +16,13 @@ $('.start_button_base button').on('click', () =>
 
 	oDealer.SetUiAdapter(new UiAdapter_CardsJs());
 
+	const oPlayerTypes = {
+		UiPlayer: UiPlayer,
+		RandomMovesMaker: RandomMovesMaker
+	};
+
 	oDealer.SetPlayers([
-		new this[jqPlayerType.val()]({name: 'Katniss'}),
+		new oPlayerTypes[jqPlayerType.val()]({name: 'Katniss'}),
 		new RandomMovesMaker({name: 'Rob'}),
 		new RandomMovesMaker({name: 'Petar'})
 	]);
