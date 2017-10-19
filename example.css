@@ -27,6 +27,10 @@ h1 {
 	margin:10px auto;
 }
 
+.hidden, .template {
+	display: none;
+}
+
 .game_box {
 	position: relative;
 	/* Define z-index, as it contains absolutely positioned elements (cards)
@@ -84,29 +88,59 @@ h1 {
 	box-shadow:#111 1px 1px 2px;
 }
 
-.player_1, .player_2 {
+.player_avatar.player_1, .player_avatar.player_2 {
 	float: left;
 	margin-bottom: 10px;
 	width: 50%;
 	text-align: center;
 }
 
-.player_0 {
+.player_avatar.player_0 {
 	margin-top: 10px;
 	text-align: center;
 }
 
-table.chips {
+table.game_status {
 	margin-top: 12px;
 	border-collapse: collapse;
 }
 
-table.chips th, table.chips td {
+table.game_status th {
+	font-weight: normal;
+}
+
+table.game_status thead tr:first-child th {
+	text-align: center;
+	font-weight: bold;
+}
+
+table.game_status th, table.game_status td {
 	padding: 1px 4px;
 }
 
-table.chips td {
+table.game_status tr.totals {
+	font-weight: bold;
+}
+
+table.game_status td {
 	border: 1px solid #999999;
+}
+
+table.game_status td.chips {
+	text-align: right;
+}
+
+table.game_status td.chips.player_0 {
+	border-left-style: double;
+	border-left-width: 3px;
+}
+
+table.game_status .game_mode.skip {
+	color: #888888;
+}
+
+table.game_status td.game_mode.player_A {
+	background: #eeffee;
 }
 
 .centering_container {
