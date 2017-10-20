@@ -5,19 +5,16 @@ body {
 	line-height: 2rem;
 }
 
-a img {
-	position: absolute; 
-	top: 0; 
-	right: 0; 
-	border: 0;			
-}
-
 p {
 	margin: 0 0 1em;
 }
 
+img {
+	border: none;
+}
+
 img.preload {
-	display:none;
+	display: none;
 }
 
 h1 {
@@ -149,4 +146,14 @@ table.game_status td.game_mode.player_A {
 
 .modal-dialog {
 	width: auto;
+}
+
+.project_info p:last-child {
+	position: relative;
+}
+
+.project_info p:last-child a {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
