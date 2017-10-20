@@ -35,9 +35,9 @@ h1 {
 	z-index: 1;
 
 	margin: 20px auto;
-	border:solid 1px black;
-	border-radius:8px;
-	box-shadow:black 0px 0px 2px;
+	border:solid 0 black;
+	border-radius: 8px;
+	box-shadow:black 0 0 2px;
 	background: #ffffff;
 	padding: 30px 50px;
 	width: calc(600px + 2*6px + 2*50px + 2*1px);	/* card table's 600 width + 2x6px borders + 2*50px self-padding + 2x1px serlf-border. */
@@ -115,6 +115,10 @@ table.game_status th, table.game_status td {
 	padding: 1px 4px;
 }
 
+table.game_status th.points {
+	text-align: center;
+}
+
 table.game_status tr.totals {
 	font-weight: bold;
 }
@@ -123,13 +127,45 @@ table.game_status td {
 	border: 1px solid #999999;
 }
 
-table.game_status td.chips {
+table.game_status td.chips,
+table.game_status td.points,
+table.game_status td.tricks {
 	text-align: right;
 }
 
-table.game_status td.chips.player_0 {
-	border-left-style: double;
+table.game_status td.points,
+table.game_status td.tricks {
+	min-width: 24px;
+}
+
+/* For "galdiņš" highlight the trick count, for other game modes -  the points. */
+table.game_status td.chips.won,
+table.game_status td.points.won,
+table.game_status .game_mode_galdi__ td.tricks.won {
+	color: #008000;
+}
+
+table.game_status td.chips.lost,
+table.game_status td.points.lost,
+table.game_status .game_mode_galdi__ td.tricks.lost {
+	color: #a52a2a;
+}
+
+table.game_status .game_mode_galdi__ td.points {
+	color: inherit;
+}
+
+
+table.game_status td.chips.player_0,
+table.game_status td.points.player_0 {
+	border-left-style: double;	/* Different kind of data, more border. */
 	border-left-width: 3px;
+}
+
+table.game_status td.points {
+	/* Same player, less border. */
+	/* Appears "solid" if 1px, so 2 px. */
+	border-right: dashed 2px #aaaaaa;
 }
 
 table.game_status .game_mode.skip {
@@ -137,7 +173,7 @@ table.game_status .game_mode.skip {
 }
 
 table.game_status td.game_mode.player_A {
-	background: #eeffee;
+	background: #eeffff;	/* Light blue. */
 }
 
 .centering_container {
