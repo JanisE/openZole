@@ -28,5 +28,5 @@ $('.start_button_base button').on('click', () =>
 		new RandomMovesMaker({name: 'Petar'})
 	]);
 
-	oDealer.StartGameRun(5);
+	oDealer.StartGameRun(6);
 });
